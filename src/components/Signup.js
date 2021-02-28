@@ -19,25 +19,14 @@ export default function Signup() {
   }
   
   const handleSubmit = (e) => {
-      e.preventDefault()
-      fetch("http://localhost:3000/users", {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(user)
-      })
-        .then(response => response.json())
-        .then(data => {
-          debugger
-          console.log(data)
-          debugger
-          if (data.token) {
-            localStorage.setItem("token", data.token)
-          }
-          else {
-            displayErrors(data)
-          }
-        })   
-  }
+    e.preventDefault()
+    fetch("http://localhost:3000/users", {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(user)
+    })
+     
+}
 
   const displayErrors = (data) => {
     Object.entries(data).forEach(message => {
