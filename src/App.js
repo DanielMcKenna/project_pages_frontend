@@ -1,25 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
-import 'semantic-ui-css/semantic.min.css'
+import React, { useEffect } from 'react';
+import Signup from './components/Signup'
+import Navbar from './components/Navbar'
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
+import Home from './containers/Home';
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+    <Router>
+      <Navbar />
+      <div>
+          <Switch>
+            <Route exact path="/">
+              <Redirect to="/home" />
+            </Route>
+
+            <Route exact path="/home" render={Home} />
+            <Route exact path="/signup" component={Signup} />
+          </Switch>
+      </div>
+    </Router>
   );
 }
 
