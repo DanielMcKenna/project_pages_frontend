@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState (false)
@@ -26,7 +26,7 @@ function Navbar() {
      
        <a href="/signup" className="menu-link">Register</a>
        <a href="/login" className="menu-link">Login</a>
-       <a href="#" className="menu-link">Profile</a>
+       <a href="/profilepage" className="menu-link">Profile</a>
      </Menu>
     </div>
     

@@ -4,6 +4,7 @@ import Signup from './components/Signup'
 import Navbar from './components/Navbar'
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import Home from './containers/Home';
+import ProfilePage from './containers/ProfilePage';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
 
             <Route exact path="/home" render={Home} />
             <Route exact path="/signup" component={Signup} />
+            <Route exact path="/profilepage" render={ProfilePage} />
           </Switch>
       </div>
     </Router>
