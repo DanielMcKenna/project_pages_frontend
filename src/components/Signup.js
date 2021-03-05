@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Form, Button } from "semantic-ui-react";
 
 
 export default function Signup() {
@@ -35,8 +34,9 @@ export default function Signup() {
   }
 
   return(
-      <Form onSubmit={handleSubmit}>
-      <Form.Input
+    <div>
+      <form onSubmit={handleSubmit}>
+      <input
         type="firstName"
         label="firstName"
         name="firstName"
@@ -45,7 +45,7 @@ export default function Signup() {
         onChange={e => setFirstName(e.target.value)}
         required
         />
-        <Form.Input
+        <input
         type="lastName"
         label="lastName"
         name="lastName"
@@ -54,7 +54,7 @@ export default function Signup() {
         onChange={e => setLastName(e.target.value)}
         required
         />
-        <Form.Input
+        <input
           type="email"
           label="email"
           name="email" 
@@ -63,7 +63,7 @@ export default function Signup() {
           onChange={e => setEmail(e.target.value)}
           required
         />
-        <Form.Input 
+        <input 
           type="password"
           label="password"
           name="off"
@@ -72,7 +72,7 @@ export default function Signup() {
           onChange={e => setPassword(e.target.value)}
           required
         />
-        <Form.Input 
+        <input 
           type="password"
           label="confirm password"
           name="off"
@@ -81,7 +81,8 @@ export default function Signup() {
           onChange={e => setPasswordConfirm(e.target.value)}
           required
         />
-        <Button type='submit' onSubmit={handleSubmit}>Submit</Button>
-      </Form>
+        <button type='submit' onSubmit={handleSubmit}>Submit</button>
+      </form>
+    </div>
   )
 }
